@@ -3,27 +3,30 @@
 import { SignUpButton, SignInButton } from '@clerk/nextjs'
 import { redirect } from 'next/navigation'
 import { BarChart, School, Puzzle, ShieldCheck, Diamond } from 'lucide-react'
-import Accordion from './components/Accordion';
+import Accordion from './components/Accordion'
 
 const items = [
   {
-    title: "How does the gamified homework platform work?",
-    content: "The platform transforms traditional assignments into interactive quests, challenges, or simulations, incentivizing students to engage in tasks that reinforce learning concepts.",
+    title: 'How does the gamified homework platform work?',
+    content:
+      'The platform transforms traditional assignments into interactive quests, challenges, or simulations, incentivizing students to engage in tasks that reinforce learning concepts.',
   },
   {
-    title: "What are the benefits of using a gamified homework platform?",
-    content: "The platform fosters motivation and engagement by incorporating game-like elements such as rewards, achievements, and leaderboards. This makes learning more enjoyable and helps students stay motivated to complete tasks.",
+    title: 'What are the benefits of using a gamified homework platform?',
+    content:
+      'The platform fosters motivation and engagement by incorporating game-like elements such as rewards, achievements, and leaderboards. This makes learning more enjoyable and helps students stay motivated to complete tasks.',
   },
   {
-    title: "Can teachers track student progress on the platform?",
-    content: "Yes, teachers have access to a dashboard where they can monitor student activity, progress, and performance. This allows them to provide targeted support and intervention as needed.",
+    title: 'Can teachers track student progress on the platform?',
+    content:
+      'Yes, teachers have access to a dashboard where they can monitor student activity, progress, and performance. This allows them to provide targeted support and intervention as needed.',
   },
   {
-    title: "How are rewards and incentives integrated into the platform?",
-    content: "Students earn rewards, badges, or points for completing tasks and mastering concepts. These rewards can be used to unlock new challenges, customize avatars, or access bonus content, providing additional motivation to engage with the platform.",
+    title: 'How are rewards and incentives integrated into the platform?',
+    content:
+      'Students earn rewards, badges, or points for completing tasks and mastering concepts. These rewards can be used to unlock new challenges, customize avatars, or access bonus content, providing additional motivation to engage with the platform.',
   },
-];
-
+]
 
 export default function Home() {
   // const user = auth().userId
@@ -37,10 +40,12 @@ export default function Home() {
             <BarChart /> Questify
           </div>
           <div className="flex gap-5">
-            <SignUpButton className="bg-blue-500 py-3 px-5 rounded-full"></SignUpButton>
-            <SignInButton className="bg-[#242F47] py-3 px-5 rounded-full">
-              Log in
-            </SignInButton>
+            <div className="bg-blue-500 py-3 px-5 rounded-full">
+              <SignUpButton></SignUpButton>
+            </div>
+            <div className="bg-[#242F47] py-3 px-5 rounded-full">
+              <SignInButton>Log in</SignInButton>
+            </div>
           </div>
         </header>
         <div className="bg-[#253249] w-full h-[1px]"></div>
@@ -60,9 +65,9 @@ export default function Home() {
                 system, and personalized feedback to help you level up your
                 academic skills
               </p>
-              <SignUpButton className="bg-blue-500 py-3 px-5 w-fit rounded-full text-lg">
-                Get started
-              </SignUpButton>
+              <div className="bg-blue-500 py-3 px-5 w-fit mt-5 rounded-full text-lg">
+                <SignUpButton>Get started</SignUpButton>
+              </div>
             </div>
           </div>
 
@@ -108,15 +113,17 @@ export default function Home() {
                 Ready to level up your homework game?
               </p>
               <div className="mt-10 mx-auto">
-                <SignUpButton className="bg-blue-500 py-3 px-5 w-fit rounded-full font-bold text-lg">
-                  Get started
-                </SignUpButton>
+                <div className="bg-blue-500 py-3 px-5 w-fit rounded-full font-bold text-lg">
+                  <SignUpButton>Get started</SignUpButton>
+                </div>
               </div>
             </div>
 
             {/* frequently */}
             <div className="flex flex-col mt-40">
-              <span className="font-bold text-3xl mb-10">Frequently asked questions</span>
+              <span className="font-bold text-3xl mb-10">
+                Frequently asked questions
+              </span>
               <Accordion items={items} />
             </div>
           </div>
