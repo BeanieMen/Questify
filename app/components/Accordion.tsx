@@ -1,10 +1,19 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-const Accordion = ({ items }) => {
-  const [activeIndex, setActiveIndex] = useState(null);
+interface Item {
+  title: string;
+  content: string;
+}
 
-  const handleClick = (index) => {
+interface AccordionProps {
+  items: Item[];
+}
+
+const Accordion: React.FC<AccordionProps> = ({ items }) => {
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+
+  const handleClick = (index: number) => {
     setActiveIndex(activeIndex === index ? null : index);
   };
 
