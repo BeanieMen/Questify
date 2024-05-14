@@ -1,0 +1,13 @@
+{
+  "extends": ["next", "next/core-web-vitals"],
+  "plugins": ["import", "unused-imports", "react", "react-hooks"],
+  "rules": {
+    "import/no-unresolved": "error",
+    "import/named": "error",
+    "import/default": "error",
+    "import/namespace": "error",
+    "import/export": "error",
+    "unused-imports/no-unused-imports": "error",
+    "react-hooks/exhaustive-deps": "warn"
+  }
+}
