@@ -63,11 +63,11 @@ export default function Home() {
           <div className="flex items-center text-2xl">
             <BarChart /> Questify
           </div>
-          <div className="flex gap-5">
-            <div className="bg-blue-500 py-3 px-5 rounded-full">
+          <div className="flex gap-3 md:gap-5">
+            <div className="bg-blue-500 py-2 px-4 md:py-3 md:px-5  rounded-full">
               <SignUpButton></SignUpButton>
             </div>
-            <div className="bg-[#242F47] py-3 px-5 rounded-full">
+            <div className="bg-[#242F47] py-2 px-4 md:py-3 md:px-5 rounded-full">
               <SignInButton>Log in</SignInButton>
             </div>
           </div>
