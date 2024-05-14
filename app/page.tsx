@@ -4,6 +4,8 @@ import { SignUpButton, SignInButton } from '@clerk/nextjs'
 import { redirect } from 'next/navigation'
 import { BarChart, School, Puzzle, ShieldCheck, Diamond } from 'lucide-react'
 import Accordion from './components/Accordion'
+import { useState, useEffect } from 'react'
+import { User } from '@clerk/nextjs/server'
 
 const items = [
   {
@@ -54,8 +56,24 @@ const features = [
 ]
 
 export default function Home() {
-  let user
-  if (user) redirect('/home')
+
+  const [clerkUser, setClerkUser] = useState<User | null>(null)
+
+  useEffect(() => {
+    const setup = async () => {
+      try {
+        const response = await fetch('/api/user')
+        const result = (await response.json()) as { userData: User }
+        setClerkUser(result.userData)
+      } catch (error) {
+        console.error('Error fetching current user:', error)
+      }
+    }
+
+    setup()
+  }, [])
+
+  if (clerkUser) redirect('/home')
   else {
     return (
       <div className="bg-[#111622] min-h-screen px-5">
